@@ -16,9 +16,9 @@ return new class extends Migration
             $table->string('email');
             $table->integer('godine');
             $table->unsignedBigInteger('vrsta_plesa_id');
-            $table->foreign('vrsta_plesa_id')->references('id')->on('vrsta_plesas');
+            $table->foreign('vrsta_plesa_id')->references('id')->on('vrsta_plesas')->onDelete('cascade');
             $table->unsignedBigInteger('plesna_skola_id');
-            $table->foreign('plesna_skola_id')->references('id')->on('plesna_skolas');
+            $table->foreign('plesna_skola_id')->references('id')->on('plesna_skolas')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -2,18 +2,40 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "api" middleware group. Make something great!
-|
-*/
+use App\Http\Controllers\API\AuthController;
+use App\Http\Controllers\KoreografController;
+use App\Http\Controllers\PlesnaSkolaController;
+use App\Http\Controllers\PlesacController;
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+// //Route::get('/koreografs', [KoreografController::class, 'index']);
+// //Route::get('/koreograf/{id}', [KoreografController::class, 'show']);
+
+// Route::post('/register', [AuthController::class, 'register']);
+// Route::post('/login', [AuthController::class, 'login']);
+// Route::post('/logout', [AuthController::class, 'logout']);
+
+// Route::resource('/plesnaskola', PlesnaSkolaController::class);
+// Route::resource('/koreograf', KoreografController::class);
+// Route::resource('/plesac', PlesacController::class);
+
+Route::post('/register', [AuthController::class, 'register']);
+Route::post('/login', [AuthController::class, 'login']);
+
+Route::get('/plesneskole', [PlesnaSkolaController::class, 'index']);
+Route::get('/plesnaskola/{id}', [PlesnaSkolaController::class, 'show']);
+Route::get('/koreografi', [KoreografController::class, 'index']);
+Route::get('/koreograf/{id}', [KoreografController::class, 'show']);
+Route::get('/plesaci', [PlesacController::class, 'index']);
+Route::get('/plesac/{id}', [PlesacController::class, 'show']);
+
+Route::group(['middleware' => ['auth:sanctum']], function() {
+
+    Route::resource('/plesnaskola', PlesnaSkolaController::class)->only(['store','update','destroy']);
+    Route::resource('/koreograf', KoreografController::class)->only(['update', 'destroy']);
+    Route::resource('/plesac', PlesacController::class)->only(['store','update','destroy']);
+    Route::post('/logout', [AuthController::class, 'logout']);
 });

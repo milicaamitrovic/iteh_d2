@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('prezime');
             $table->string('email');
             $table->string('broj_telefona');
-            $table->foreign('koreograf_id')->references('id')->on('koreografs');
+            $table->foreign('koreograf_id')->references('id')->on('koreografs')->onDelete('cascade');
             $table->unsignedBigInteger('koreograf_id');
             $table->timestamps();
         });
