@@ -12,14 +12,14 @@ class KoreografResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'ID ' => $this->resource->id,
-            'Ime ' => $this->resource->ime,
-            'Prezime ' => $this->resource->prezime,
-            'JMBG ' => $this->resource->jmbg,
-            'Email adresa ' => $this->resource->email,
-            'Godine iskustva ' => $this->resource->godine_iskustva,
-            'Vrsta plesa ' => new VrstaPlesaResource($this->resource->vrstaPlesa),
-            'Plesna skola ' => new PlesnaSkolaResource($this->resource->plesnaSkola),
+            'ID' => $this->resource->id,
+            'Ime' => $this->resource->ime,
+            'Prezime' => $this->resource->prezime,
+            'JMBG' => $this->resource->jmbg,
+            'Email adresa' => $this->resource->email,
+            'Godine iskustva' => $this->resource->godine_iskustva,
+            'Vrsta plesa' => new VrstaPlesaResource($this->resource->vrstaPlesa),
+            'Plesna skola' => new PlesnaSkolaResource($this->resource->plesnaSkola),
         ];
     }
 }

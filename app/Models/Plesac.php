@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Koreogaf;
+use App\Models\Koreograf;
 
 class Plesac extends Model
 {
@@ -13,6 +13,7 @@ class Plesac extends Model
     protected $fillable = [
         'ime',
         'prezime',
+        'jmbg',
         'email',
         'broj_telefona',
         'koreograf_id'
@@ -20,6 +21,6 @@ class Plesac extends Model
 
     public function koreograf()
     {
-        return $this->belongsTo(Koreogaf::class);
+        return $this->belongsTo(Koreograf::class);
     }
 }

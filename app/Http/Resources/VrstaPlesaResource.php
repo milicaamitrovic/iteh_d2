@@ -12,11 +12,11 @@ class VrstaPlesaResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'ID ' => $this->resource->id,
-            'Naziv ' => $this->resource->naziv,
-            'Opis ' => $this->resource->opis,
-            'Zemlja porekla ' => $this->resource->zemlja_porekla,
-            'Najpoznatija numera ' => $this->resource->najpoznatija_numera
+            'ID' => $this->resource->id,
+            'Naziv' => $this->resource->naziv,
+            'Opis' => $this->resource->opis,
+            'Zemlja porekla' => $this->resource->zemlja_porekla,
+            'Najpoznatija numera' => $this->resource->najpoznatija_numera
         ];
     }
 }

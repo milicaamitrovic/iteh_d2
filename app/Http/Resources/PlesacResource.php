@@ -12,13 +12,13 @@ class PlesacResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'ID ' => $this->resource->id,
-            'Ime ' => $this->resource->ime,
-            'Prezime ' => $this->resource->prezime,
-            'JMBG ' => $this->resource->jmbg,
+            'ID' => $this->resource->id,
+            'Ime' => $this->resource->ime,
+            'Prezime' => $this->resource->prezime,
+            'JMBG' => $this->resource->jmbg,
             'Email adresa' => $this->resource->email,
-            'Broj telefona ' => $this->resource->brojTelefona,
-            'Koreograf ' => new KoreografResource($this->resource->koreograf)
+            'Broj telefona' => $this->resource->broj_telefona,
+            'Koreograf' => new KoreografResource($this->resource->koreograf)
       ];
     }
 }

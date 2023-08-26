@@ -12,12 +12,12 @@ class PlesnaSkolaResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'ID ' => $this->resource->id,
-            'Naziv ' => $this->resource->naziv,
-            'Adresa ' => $this->resource->adresa,
-            'Email adresa ' => $this->resource->email,
-            'Website ' => $this->resource->website,
-            'Broj telefona ' => $this->resource->broj_telefona,
+            'ID' => $this->resource->id,
+            'Naziv' => $this->resource->naziv,
+            'Adresa' => $this->resource->adresa,
+            'Email adresa' => $this->resource->email,
+            'Website' => $this->resource->website,
+            'Broj telefona' => $this->resource->broj_telefona,
         ];
     }
 }
