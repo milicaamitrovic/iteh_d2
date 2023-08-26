@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Database\Seeders\PlesnaSkolaSeeder;
 use Database\Seeders\VrstaPlesaSeeder;
 use Database\Seeders\KoreografSeeder;
-use Database\Seeders\PlesacaSeeder;
+use Database\Seeders\PlesacSeeder;
 
 class DatabaseSeeder extends Seeder
 {
